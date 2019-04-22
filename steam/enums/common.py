@@ -539,12 +539,25 @@ class ECurrencyCode(SteamIntEnum):
     Max = 42
 
 
+class EDepotFileFlag(SteamIntEnum):
+    UserConfig = 1
+    VersionedUserConfig = 2
+    Encrypted = 4
+    ReadOnly = 8
+    Hidden = 16
+    Executable = 32
+    Directory = 64
+    CustomExecutable = 128
+    InstallScript = 256
+    Symlink = 512
+
+
 # Do not remove
 from sys import modules
 from enum import EnumMeta
 
 __all__ = list(map(lambda y: y.__name__,
-              filter(lambda x: x.__class__ is EnumMeta, modules[__name__].__dict__.values()),
-              ))
+                   filter(lambda x: x.__class__ is EnumMeta, modules[__name__].__dict__.values()),
+                   ))
 
 del modules, EnumMeta
